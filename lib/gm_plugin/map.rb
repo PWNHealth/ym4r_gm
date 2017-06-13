@@ -33,12 +33,12 @@ module Ym4r
         options[:sensor] = false unless options.has_key?(:sensor)
         options[:version] ||= "2.x"
         api_key = ApiKey.get(options)
-        a = "<script src=\"http://maps.google.com/maps?file=api&amp;v=#{options[:version]}&amp;key=#{api_key}&amp;hl=#{options[:hl]}&amp;sensor=#{options[:sensor]}\" type=\"text/javascript\"></script>\n"
+        a = "<script src=\"https://maps.google.com/maps?file=api&amp;v=#{options[:version]}&amp;key=#{api_key}&amp;hl=#{options[:hl]}&amp;sensor=#{options[:sensor]}\" type=\"text/javascript\"></script>\n"
         a << "<script src=\"/javascripts/ym4r-gm.js\" type=\"text/javascript\"></script>\n" unless options[:without_js]
         a << "<!--[if IE]>\n<style type=\"text/css\">\n v\\:* { behavior:url(#default#VML);}\n</style>\n<![endif]-->\n" if options[:with_vml]
-        a << "<script src=\"http://www.google.com/uds/api?file=uds.js&amp;v=1.0\" type=\"text/javascript\"></script>" if options[:local_search]
-        a << "<script src=\"http://www.google.com/uds/solutions/localsearch/gmlocalsearch.js\" type=\"text/javascript\"></script>\n" if options[:local_search]
-        a << "<style type=\"text/css\">@import url(\"http://www.google.com/uds/css/gsearch.css\");@import url(\"http://www.google.com/uds/solutions/localsearch/gmlocalsearch.css\");}</style>" if options[:local_search]
+        a << "<script src=\"https://www.google.com/uds/api?file=uds.js&amp;v=1.0\" type=\"text/javascript\"></script>" if options[:local_search]
+        a << "<script src=\"https://www.google.com/uds/solutions/localsearch/gmlocalsearch.js\" type=\"text/javascript\"></script>\n" if options[:local_search]
+        a << "<style type=\"text/css\">@import url(\"https://www.google.com/uds/css/gsearch.css\");@import url(\"https://www.google.com/uds/solutions/localsearch/gmlocalsearch.css\");}</style>" if options[:local_search]
         a
       end
      
